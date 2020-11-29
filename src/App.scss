@@ -1,0 +1,31 @@
+$purple:#2A0D80;
+$base: #F7F6F6;
+$teal: #44A7A7;
+$pink: #E93578;
+$shadow: 0px 5px 5px rgba(122, 122, 122, 0.21);
+$text-color: #7A7A7A;
+
+
+.App {
+
+  &__header { 
+    background-color: $purple;
+    height: 57px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1em;
+    color: white;
+    list-style-type: none;
+    padding:0px 20vw;
+
+    li {
+      padding: 20px;
+    }
+  }
+
+  &__container {
+    display:flex;
+    flex-direction: column;
+  }
+
+}
