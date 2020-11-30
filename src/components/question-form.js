@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, {useState} from 'react';
+// import axios from 'axios';
 
 function QuestionForm() {
    const [newQuestion, setQuestion] = useState({
         name: '',
         email: '',
-        topic: 'Astrology',
+        topic: '',
         question: ''
    })
 
-   function sendQuestion(e) {
-    e.preventDefault()
+   function sendQuestion(event) {
+    event.preventDefault()
+    console.log("checking sendQuestion Function")
     console.log("newQuestion:", newQuestion);
     setQuestion({
       name: '',
@@ -22,40 +23,51 @@ function QuestionForm() {
 
 
       return (
-        <div>
+        <div className="question">
           <h1>Send Your Question</h1>
-          <form action="">
-            <input 
-             type="text" 
-             placeholder="Name" 
-             value={newQuestion['name']}
-             onChange={(e) => setQuestion({...newQuestion, name:e.target.value})} 
-             />
-            <input 
-             type="text" 
-             placeholder="Email" 
-             value={newQuestion['email']}
-             onChange={(e)=>setQuestion({...newQuestion, email: e.target.value})} 
-             />
-            <input 
-            type="text" 
-            placeholder="Topic" 
-            value={newQuestion['topic']}
-            onChange= {(e)=>setQuestion({...newQuestion, topic: e.target.value})}
-             />
-            <input 
-            type="text" 
-            placeholder="Question" 
-            value={newQuestion['question']}
-            onChange={(e)=>setQuestion({...newQuestion, question: e.target.value})} 
+          <form className="question__form" >
+            <input
+              type="text"
+              placeholder="Name"
+              value={newQuestion['name']}
+              onChange={(e) =>
+                setQuestion({...newQuestion, name: e.target.value})
+              }
             />
-            <button 
-             className="q-button"
-             onSubmit={(e)=>sendQuestion()}
-            >Submit Question
+            <input
+              type="text"
+              placeholder="Email"
+              value={newQuestion['email']}
+              onChange={(e) =>
+                setQuestion({...newQuestion, email: e.target.value})
+              }
+            />
+            <select
+              type="text"
+              placeholder="Select Topic"
+              value={newQuestion['topic']}
+              onChange={(e) =>
+                setQuestion({...newQuestion, topic: e.target.value})
+              }
+            >
+              <option value="Astrology">Astrology</option>
+              <option value="Finances">Finances</option>
+              <option value="General">General</option>
+              <option value="Software Engineering">Software Engineering</option>
+            </select>
+            <textarea
+              type="text"
+              placeholder="Your Question"
+              value={newQuestion['question']}
+              onChange={(e) =>
+                setQuestion({...newQuestion, question: e.target.value})
+              }
+            />
+            <button className="q-button" onClick={sendQuestion}>
+              Submit Question
             </button>
           </form>
-          <hr/>
+          <hr />
         </div>
       );
     }

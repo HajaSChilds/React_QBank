@@ -1,0 +1,74 @@
+.question {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+    h1 {
+        color: $purple;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    &__form {
+        display:flex;
+        flex-direction: column;
+        
+        input, select {
+            margin:5px 0px;
+            padding: 10px 0px 7px 5px;
+            width: 300px;
+            box-shadow: $shadow;
+            border: 1px solid transparent;
+            outline:none;
+
+            &:hover, &:focus {
+                box-shadow: 0px 5px 5px rgba(122, 122, 122, 0.60);
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        textarea {       
+            margin:10px 0px;
+            padding: 10px 0px 7px 5px;
+            width: 300px;
+            height: 100px;
+            box-shadow: $shadow;
+            border: 1px solid transparent;
+            outline:none;
+            font-family: inherit;
+            font-size: 12px;
+            resize: none;
+
+
+            &:hover, &:focus {
+                box-shadow: 0px 5px 5px rgba(122, 122, 122, 0.60);
+                transition: 0.3s ease-in-out;
+            }
+     
+        }
+        
+    }
+
+
+}
+
+.q-button {
+    background-color: $teal;
+    font-size: 1em;
+    color: white;
+    padding: 7px;
+    outline: none;
+    border: 1px solid transparent;
+    width: 150px;
+    align-self: center;
+
+    &:hover{
+        background-color: transparent;
+        color: $teal;
+        font-weight: 600;
+        border: 1px solid $teal;
+
+        
+    }
+}

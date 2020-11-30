@@ -26,6 +26,13 @@ $text-color: #7A7A7A;
   &__container {
     display:flex;
     flex-direction: column;
+    background-color: $base;
+
+    @import './styles/ask_question.scss';
+  
+  
   }
+
+
 
 }
