@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
  
-export default function AnswerBank() {
+export default function QuestionBank() {
      return(
          <div>
              <div>15 Questions in Queue</div>
